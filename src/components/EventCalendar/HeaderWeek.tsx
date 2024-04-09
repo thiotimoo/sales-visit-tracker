@@ -14,7 +14,18 @@ const HeaderWeek = () => {
     return (
         <div className="grid grid-cols-7 w-full bg-white">
             {weeks.map((w, i) => {
-                return <ItemWeek index={i} week={w} />;
+                return (
+                    <div key={i} className="sm:hidden">
+                        <ItemWeek index={i} key={i} week={w.charAt(0)} />
+                    </div>
+                );
+            })}
+            {weeks.map((w, i) => {
+                return (
+                    <div key={i} className="hidden sm:block">
+                        <ItemWeek index={i} key={i} week={w} />
+                    </div>
+                );
             })}
         </div>
     );
