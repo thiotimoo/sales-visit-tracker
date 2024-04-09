@@ -57,7 +57,7 @@ const GridCalendar = ({date, handleDate, viewMode}: ItemProps) => {
     return (
         <div className="grid grid-cols-7 bg-white">
             {getCalendarDates({ year: date.getFullYear(), month: date.getMonth() }).map((date, index) => (
-                <ItemCalendar index={index} date={date.date} isCurrentMonth={date.isCurrentMonth}/>
+                <ItemCalendar index={index} date={date.date} viewMode={viewMode} isCurrentMonth={date.isCurrentMonth}/>
             ))}
         </div>
     );

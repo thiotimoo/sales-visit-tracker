@@ -6,15 +6,19 @@ import React from "react";
 
 const BackButton = () => {
     const router = useRouter();
-    const handleClick = () => {
-        router.back();
-    };
+    const handleClick = () => router.back()
     return (
         <motion.button
             className="p-4 rounded-md hover:bg-zinc-300"
             whileTap={{ scale: 0.9 }}
+            onClick={handleClick}
         >
-            <X size={16} alt="Cancel" weight="bold" onClick={handleClick} />
+            <X
+                size={16}
+                alt="Cancel"
+                weight="bold"
+                
+            />
         </motion.button>
     );
 };
